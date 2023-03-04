@@ -89,7 +89,7 @@ function Home() {
                         {mintHistorys.map((history, index) => (
                             <ImageThumbnail
                                 key={`${history.imageUrl}-${index}`}
-                                className="min-h-[234px]"
+                                className="min-h-[234px] aspect-square"
                                 imageUrl={history.imageUrl}
                                 description={history.description}
                                 onClick={() => {}}

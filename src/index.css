@@ -27,6 +27,21 @@
 }
 
 .btn-default {
-    background: linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%);
+    background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
     border-radius: 5px;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #777777;
+    border-radius: 3px;
+}
+.scroll-custom::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+    padding: 20px;
+}
+.scroll-custom::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #ffcc21;
 }
