@@ -33,8 +33,13 @@ function Footer() {
         <footer className="bg-midnight px-[160px] h-[128px] flex items-center">
             <nav>
                 <ul className="flex">
-                    {footers.map((footer) => (
-                        <li className="text-white cursor-pointer mr-[45px] hover:text-orange">{footer.label}</li>
+                    {footers.map((footer, index) => (
+                        <li
+                            key={`${footer.label}-${index}`}
+                            className="text-white cursor-pointer mr-[45px] hover:text-orange"
+                        >
+                            {footer.label}
+                        </li>
                     ))}
                 </ul>
             </nav>

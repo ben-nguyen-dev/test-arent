@@ -11,6 +11,8 @@ export interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ icon, label, path, isActive }) => {
     const history = useHistory();
     const handleClick = () => {
+        console.log('sss', path, history, { useHistory });
+
         history.push(path);
     };
 

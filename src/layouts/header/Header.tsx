@@ -5,18 +5,19 @@ import NavItem, { NavItemProps } from './components/NavItem';
 import { ReactComponent as MemoIcon } from '../../assets/icons/MemoIcon.svg';
 import { ReactComponent as ChallengeIcon } from '../../assets/icons/ChallengeIcon.svg';
 import { ReactComponent as InfoIcon } from '../../assets/icons/InfoIcon.svg';
+import { APP_ROUTER } from '../../constants/constant';
 
 const navs: NavItemProps[] = [
     {
         label: '自分の記録',
         isActive: true,
-        path: '/',
+        path: APP_ROUTER.MY_RECORD,
         icon: <MemoIcon />,
     },
     {
         label: 'チャレンジ',
         isActive: true,
-        path: '/',
+        path: APP_ROUTER.MY_CHALLENGE,
         icon: <ChallengeIcon />,
     },
     {
@@ -31,13 +32,19 @@ function Header() {
     return (
         <header className="bg-midnight">
             <div className="mx-[160px] flex justify-between items-center">
-                <div className="text-white font-bold text-lg">
+                <Link to={APP_ROUTER.HOME} className="text-white font-bold text-lg">
                     <img className="w-[110px] cursor-pointer m-4" src={Logo} alt="logo" />
-                </div>
+                </Link>
                 <nav className="flex">
                     <ul className="flex">
-                        {navs.map((nav) => (
-                            <NavItem isActive={nav.isActive} label={nav.label} path={nav.path} icon={nav.icon} />
+                        {navs.map((nav, index) => (
+                            <NavItem
+                                key={`${nav.label}-${index}`}
+                                isActive={nav.isActive}
+                                label={nav.label}
+                                path={nav.path}
+                                icon={nav.icon}
+                            />
                         ))}
                     </ul>
                     <div>

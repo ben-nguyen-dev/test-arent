@@ -7,4 +7,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
+
+.btn-hexagon {
+    width: 134px;
+    height: 134px;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    clip-path: polygon(0 26%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    background: linear-gradient(155.89deg, #ffcc21 8.26%, #ff963c 91.18%);
+    background-repeat: no-repeat;
+    transition: background-position-y ease-in-out 250ms;
+}
+
+.btn-default {
+    background: linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%);
+    border-radius: 5px;
+}

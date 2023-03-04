@@ -10,7 +10,8 @@ module.exports = {
       current: 'currentColor',
       'midnight': '#414141',
       'white': "#ffffff",
-      'orange': "#FF963C"
+      'orange': "#FF963C",
+      'yellow': '#FFCC21',
     }
   },
   plugins: [],
