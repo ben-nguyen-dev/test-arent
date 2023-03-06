@@ -36,7 +36,7 @@ function Footer() {
                     {footers.map((footer, index) => (
                         <li
                             key={`${footer.label}-${index}`}
-                            className="text-white cursor-pointer mr-[45px] hover:text-orange"
+                            className="text-white cursor-pointer mr-[45px] hover:text-orange text-[11px]"
                         >
                             {footer.label}
                         </li>

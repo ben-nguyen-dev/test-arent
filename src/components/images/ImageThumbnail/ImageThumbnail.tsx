@@ -9,10 +9,12 @@ export interface IImageThumbnailProps {
 
 const ImageThumbnail: FC<IImageThumbnailProps> = ({ imageUrl, description, onClick, className }) => {
     return (
-        <div className={`image-thumnail ${className} relative`} onClick={onClick}>
+        <div className={`image-thumbnail ${className} relative cursor-pointer`} onClick={onClick}>
             <img className="w-full h-full object-cover" src={imageUrl} alt={description || ''} />
             {description ? (
-                <div className="absolute bottom-0 left-0 bg-yellow text-white w-[120px] p-[7px]">{description}</div>
+                <div className="absolute bottom-0 left-0 bg-yellow text-white min-w-[120px] p-[5px] text-[15px]">
+                    {description}
+                </div>
             ) : null}
         </div>
     );

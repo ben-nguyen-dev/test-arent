@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/images/logo.svg';
 import NavItem, { NavItemProps } from './components/NavItem';
 import { ReactComponent as MemoIcon } from '../../assets/icons/MemoIcon.svg';
@@ -7,7 +7,7 @@ import { ReactComponent as ChallengeIcon } from '../../assets/icons/ChallengeIco
 import { ReactComponent as InfoIcon } from '../../assets/icons/InfoIcon.svg';
 import { APP_ROUTER } from '../../constants/constant';
 
-const navs: NavItemProps[] = [
+const navs = [
     {
         label: '自分の記録',
         isActive: true,
@@ -23,12 +23,15 @@ const navs: NavItemProps[] = [
     {
         label: 'お知らせ',
         isActive: true,
-        path: '/',
+        path: '',
         icon: <InfoIcon />,
+        numberOfNoti: 1,
     },
 ];
 
 function Header() {
+    const location = useLocation();
+
     return (
         <header className="bg-midnight">
             <div className="mx-[160px] flex justify-between items-center">
@@ -40,10 +43,11 @@ function Header() {
                         {navs.map((nav, index) => (
                             <NavItem
                                 key={`${nav.label}-${index}`}
-                                isActive={nav.isActive}
+                                isActive={location.pathname === nav.path}
                                 label={nav.label}
                                 path={nav.path}
                                 icon={nav.icon}
+                                numberOfNoti={nav?.numberOfNoti}
                             />
                         ))}
                     </ul>

@@ -6,6 +6,8 @@ import { ReactComponent as KnifeIcon } from '../../assets/icons/KnifeIcon.svg';
 import { ReactComponent as CupIcon } from '../../assets/icons/CupIcon.svg';
 import ImageThumbnail, { IImageThumbnailProps } from '../../components/images/ImageThumbnail/ImageThumbnail';
 import Button from '../../components/buttons/Button/Button';
+import LineChartCustom from '../../components/charts/LineChart/LineChartCustom';
+import { bodyRecords } from '../MyRecord/MyRecord';
 
 const dataDefault: DateAchievementRateProps = {
     backgroundUrl: 'images/home/d01 (image).png',
@@ -43,32 +45,32 @@ const mintHistorys = [
     },
 
     {
-        imageUrl: '/images/home/m01.jpg',
-        description: '05.21.Morning',
+        imageUrl: '/images/home/l03.jpg',
+        description: '05.21.Lunch',
+    },
+    {
+        imageUrl: '/images/home/d01 (image).png',
+        description: '05.21.Dinner',
+    },
+    {
+        imageUrl: '/images/home/l01.jpg',
+        description: '05.21.Snack',
     },
     {
         imageUrl: '/images/home/m01.jpg',
         description: '05.21.Morning',
     },
     {
-        imageUrl: '/images/home/m01.jpg',
-        description: '05.21.Morning',
+        imageUrl: '/images/home/m02.jpg',
+        description: '05.21.Lunch',
     },
     {
-        imageUrl: '/images/home/m01.jpg',
-        description: '05.21.Morning',
+        imageUrl: '/images/home/d02.jpg',
+        description: '05.21.Dinner',
     },
     {
-        imageUrl: '/images/home/m01.jpg',
-        description: '05.21.Morning',
-    },
-    {
-        imageUrl: '/images/home/m01.jpg',
-        description: '05.21.Morning',
-    },
-    {
-        imageUrl: '/images/home/m01.jpg',
-        description: '05.21.Morning',
+        imageUrl: '/images/home/m03.jpg',
+        description: '05.21.Snack',
     },
 ];
 
@@ -79,7 +81,9 @@ function Home() {
                 <div className="basis-2/5 w-2/5 min-w-2/5 h-[315px]">
                     <DateAchievementRate data={dataDefault.data} backgroundUrl={dataDefault.backgroundUrl} />
                 </div>
-                {/* <div className="basis-6/10 h-[500px] bg-orange w-full"></div> */}
+                <div className="basis-3/5 w-full bg-black p-4">
+                    <LineChartCustom data={bodyRecords} />
+                </div>
             </div>
 
             <div className="container-2 flex flex-col justify-center">

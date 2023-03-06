@@ -1,26 +1,18 @@
-import React, { lazy, Suspense, useRef } from 'react';
-import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
-import Footer from '../layouts/footer/Footer';
-import Header from '../layouts/header/Header';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ReactComponent as ScrollTopIcon } from '../assets/icons/ScrollTopIcon.svg';
 import Spinnet from '../components/loadings/Spinnet';
 import { APP_ROUTER } from '../constants/constant';
+import Footer from '../layouts/footer/Footer';
+import Header from '../layouts/header/Header';
 
 function AppRouter() {
-    const bodyRef: any = useRef(null);
     const Home = lazy(() => import('../pages/Home/Home'));
     const MyRecord = lazy(() => import('../pages/MyRecord/MyRecord'));
     const Challenge = lazy(() => import('../pages/Challenge/Challenge'));
 
     const handleScrollTop = () => {
-        console.log({ window });
-
-        setTimeout(() => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-        }, 2);
+        
     };
 
     return (

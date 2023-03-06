@@ -17,8 +17,8 @@ const MyExercise: FC<IMyExerciseProps> = ({ date, dataDetails }) => {
                 <span className="text-[22px] font-normal">{date}</span>
             </div>
             <div className="grid grid-flow-row grid-cols-2 overflow-auto max-h-[260px] scroll-custom">
-                {dataDetails.map((data) => (
-                    <div className="pr-[40px]">
+                {dataDetails.map((data, index) => (
+                    <div key={`${data.title}-${index}`} className="pr-[40px]">
                         <div className="flex items-start w-full py-[5px] border-b-[1px]">
                             <span className="pr-[5px]">•</span>
                             <div className="flex-1">

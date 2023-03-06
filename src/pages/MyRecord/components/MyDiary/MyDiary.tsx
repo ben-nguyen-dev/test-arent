@@ -18,8 +18,8 @@ const MyDiary: FC<IMyDiaryProps> = ({ dataDetails }) => {
                 <p className="text-[22px]">MY DIARY</p>
             </div>
             <div className="grid grid-flow-row grid-cols-4 gap-[12px]">
-                {dataDetails.map((data) => (
-                    <div className="p-4 border-gray border-[2px] aspect-square">
+                {dataDetails.map((data, index) => (
+                    <div key={`${data.title}-${index}`} className="p-4 border-gray border-[2px] aspect-square">
                         <p className="text-[18px]">{data.date}</p>
                         <p className="text-[18px] mb-[10px]">{data.time}</p>
                         <p className="mb-[5px]">{data.title}</p>
